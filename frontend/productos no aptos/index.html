@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mermas | Imperio</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="../compartido/sesion.js" defer></script>
+  <script src="../compartido/datos.js" defer></script>
+  <script src="../compartido/navegacion.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body data-modulo="mermas">
+  <aside class="barraLateral"></aside>
+  <main>
+    <header><h1>Mermas y desperdicios</h1></header>
+    <div class="formularios">
+      <form id="formularioMerma" class="tarjeta">
+        <h2>Registrar merma o producto no apto</h2>
+        <div class="campos">
+          <div class="campo"><label for="productoMerma">Producto</label><select id="productoMerma" name="producto" required></select></div>
+          <div class="campo"><label for="cantidadMerma">Cantidad</label><input id="cantidadMerma" name="cantidad" type="number" min="0.01" max="99999999.99" step="0.01" required></div>
+          <div class="campo"><label for="unidadMerma">Unidad</label><input id="unidadMerma" name="unidad" readonly></div>
+          <div class="campo"><label for="tipoMerma">Tipo de baja</label><select id="tipoMerma" name="detalle"><option>Caducidad</option><option>Daño</option><option>Otros</option></select></div>
+          <div class="campo"><label for="fechaMerma">Fecha</label><input id="fechaMerma" name="fecha" type="date" required></div>
+          <div class="campo"><label for="observacionesMerma">Descripción</label><input id="observacionesMerma" name="observaciones" maxlength="250" placeholder="Opcional"></div>
+        </div>
+        <button id="registrarMerma" class="registrar entrada" type="submit" disabled>Registrar merma</button>
+        <p id="mensajeEstado" role="status"></p>
+      </form>
+      <section id="gestionMermas" hidden>
+        <h2>Resumen del mes</h2>
+        <dl id="resumenMermas" class="resumenMermas"></dl>
+        <h2 class="tituloHistorial">Historial de mermas</h2>
+        <div class="contenedorTabla">
+          <table>
+            <thead><tr><th>Fecha</th><th>Producto</th><th>Cantidad</th><th>Tipo</th><th>Descripción</th></tr></thead>
+            <tbody id="historialMermas"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

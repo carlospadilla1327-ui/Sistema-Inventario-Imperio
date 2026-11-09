@@ -1,0 +1,5 @@
+@import url("../entrada y salida de insumos/estilos.css");
+.resumenMermas { display:grid; grid-template-columns:repeat(auto-fit,minmax(95px,1fr)); gap:8px; }
+.resumenMermas div { background:white; border:1px solid #e8e2d7; border-radius:8px; padding:10px; }
+.resumenMermas dt { font-size:12px; }
+.resumenMermas dd { margin:5px 0 0; font-size:20px; font-weight:bold; }
